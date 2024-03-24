@@ -1,0 +1,181 @@
+.cr-widget {
+  height: 100%;
+  position: relative;
+
+  &.__animation-incoming {
+    .cr-widget-box-list-item {
+      .cr-widget-message {
+        animation: right-to-left 1s ease;
+      }
+
+      &.__item-input {
+        .cr-widget-message {
+          animation: left-to-right 1s ease;
+        }
+      }
+    }
+  }
+  
+  @keyframes left-to-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes right-to-left {
+    0% {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  &-box {
+    height: 100%;
+    overflow-y: scroll;
+    padding-bottom: 72px;
+    -webkit-overflow-scrolling: touch;
+    
+    -ms-overflow-style: none;  // IE and Edge
+    scrollbar-width: none;  // Firefox
+    &::-webkit-scrollbar {
+      display: none; // Chrome、Safari 和 Opera
+    }
+  
+    &-time {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0px;
+      color: #888888;
+      margin-bottom: 8px;
+    }
+
+    &-list {
+      & > .cr-widget-box-list-item:last-child {
+        // padding-bottom: 0;
+        padding-bottom: 2px;
+      }
+
+      &-item {
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: row;
+      
+        &.__item-input {
+          flex-direction: row-reverse;
+      
+          .cr-widget-avatar {
+            background-color: #FAFAFA;
+            background-image: url(//img.alicdn.com/imgextra/i1/O1CN01QXs3g81VALPahGG9V_!!6000000002612-55-tps-36-36.svg);
+          }
+      
+          .cr-widget-message {
+            background: #CDE9FF;
+            margin: 0 12px 0 0;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  &-avatar, &-message {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #FF6A00 url(//img.alicdn.com/imgextra/i2/O1CN01unmzHU1efn9DEw6yW_!!6000000003899-55-tps-36-36.svg) no-repeat center center;
+  }
+
+  &-message {
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.16);
+    padding: 12px 16px;
+    line-height: 20px;
+    margin: 0 0 0 12px;
+    background: #FFFFFF;
+    font-size: 12px;
+  }
+
+  &-input-box {
+    padding: 16px 0;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(250, 250, 250, 0.6);
+    backdrop-filter: blur(10px);
+  
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: 4px;
+      background: #FFFFFF;
+      box-sizing: border-box;
+      border: 1px solid #DEDEDE;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 22px;
+      padding: 9px 12px;
+      color: #333333;
+      outline: none;
+      transition: border-color .3s ease-out;
+  
+      &:hover, &:focus {
+        border-color: #737373;
+      }
+      &:focus {
+        position: relative;
+        z-index: 1;
+      }
+      &::placeholder {
+        color: #888888;
+      }
+      &[disabled] {
+        background-color: #f7f7f7;
+        cursor: not-allowed;
+        
+        &, &::placeholder {
+          color: #c1c1c1;
+        }
+        &, &:hover {
+          border-color: #f5f5f5;
+        }
+      }
+    }
+  
+    button {
+      flex: 1;
+      margin-left: 8px;
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
+      padding: 0;
+      border-radius: 4px;
+      border: 0 none;
+      outline: none;
+      cursor: pointer;
+      background: transparent url(//img.alicdn.com/imgextra/i2/O1CN01OwYLQQ1OIrSzGogHt_!!6000000001683-55-tps-40-40.svg) no-repeat center center !important;
+  
+      &[disabled] {
+        cursor: not-allowed;
+        background: url(//img.alicdn.com/imgextra/i1/O1CN01ZKIsWY27VMzfjH2WM_!!6000000007802-55-tps-40-40.svg) !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+body {
+  background: #FAFAFA;
+}
+
+.layout {
+  margin: 0 auto;
+  height: 100vh;
+  width: 600px;
+}
+
+.prompt {
+  line-height: 20px;
+
+  &,
+  & h3,
+  & p,
+  & dl,
+  & dt,
+  & dd {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    color: #333333;
+  }
+
+  &>dl {
+    margin-top: 8px;
+  }
+
+  &>p {
+    margin-top: 12px;
+  }
+
+  &>label {
+    margin-bottom: 8px;
+  }
+}
