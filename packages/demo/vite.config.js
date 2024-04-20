@@ -5,6 +5,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/chat-robot/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -14,5 +15,8 @@ export default defineConfig({
   build: {
     outDir: '../../gh-pages',
     emptyOutDir: true
+  },
+  server: {
+    open: true
   }
 });
