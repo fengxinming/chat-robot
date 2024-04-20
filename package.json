@@ -12,7 +12,8 @@
     "test": "pnpm run test",
     "prepare": "husky",
     "lint-staged": "lint-staged",
-    "eslint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx --fix --ignore-path .eslintignore ./"
+    "eslint": "eslint --ext .js,.mjs,.jsx,.ts,.tsx --fix --ignore-path .eslintignore ./",
+    "gh-pages": "git subtree push --prefix=gh-pages origin gh-pages"
   },
   "author": "Jesse Feng <fxm0016@126.com>",
   "license": "MIT",

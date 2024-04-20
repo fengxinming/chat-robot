@@ -10,5 +10,9 @@ export default defineConfig({
     alias: {
       'chat-robot': fileURLToPath(new URL('../chat-robot/src', import.meta.url))
     }
+  },
+  build: {
+    outDir: '../../gh-pages',
+    emptyOutDir: true
   }
 });
